@@ -15,6 +15,7 @@ cp cputil.spec $DIR
 cp Makefile $DIR
 cp LICENSE $DIR
 cp README.md $DIR
+cp rpm.sh $DIR
 
 tar -zcvf $TAR $DIR
 
