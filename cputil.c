@@ -27,6 +27,7 @@
 #include <time.h>
 #include <errno.h>
 #include <pthread.h>
+#include <string.h>
 
 unsigned int util;
 unsigned int thread_count;
