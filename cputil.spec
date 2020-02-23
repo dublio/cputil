@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Generate a workload cost specific cpu usage
 License:        GPLv3
 URL:            https://github.com/dublio/cputil
-Source0:        https://github.com/dublio/cputil/archive/cputil-1.0.tar.gz
+Source0:        https://github.com/dublio/cputil/releases/download/1.0/cputil-1.0.tar.gz
 #BuildRequires:
 #Requires:
 
