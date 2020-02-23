@@ -1,0 +1,71 @@
+.TH CPUTIL 1 "February 23, 2020" "cputil 1.0" ""
+
+.SH NAME
+cputil \- generate a workload cost specific cpu usage.
+
+.SH SYNOPSIS
+.B cputil util [time]
+.br
+
+.SH DESCRIPTION
+The \fIcputil\fR utility will generate a workload which cost a specific cpu
+usage.
+
+.SH OPTIONS
+
+\-h
+.br
+\-\-help
+.RS
+Show this help.
+.RE
+
+.br
+\-\-version
+.RS
+Show software version.
+.RE
+
+It accepts one or two arguments:
+
+.TP 2
+\-
+The first one used to specify a cpu utilization (i.e. 75 stands for 75%,
+800 stands for 800% if there are more than 8 cpus in your system).
+
+.TP 2
+\-
+The second one is used to set the total run time in unit of seconds, this
+parameter is optional. If the second parameter was not specified,
+the \fIcputil\fR will keep running until it was killed.
+
+
+.SH EXAMPLES
+
+.TP 2
+\-
+Run a 75% cpu.util for 30s
+
+cputil 75 30
+
+
+.TP 2
+\-
+Run a 800% cpu.util forever
+
+cputil 800
+
+
+.SH AUTHORS
+\fIcputil\fR was written by Weiping Zhang.
+
+.SH "REPORTING BUGS"
+Report bugs to <zwp10758@gmail.com>, you can also submit a new issue at
+https://github.com/dublio/cputil/issues
+
+.SH COPYRIGHT
+Copyright \(co 2020 Weiping Zhang
+.br
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
