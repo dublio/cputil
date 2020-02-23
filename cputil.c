@@ -53,8 +53,10 @@ void run_cpu_util_per_thread(unsigned int u)
 	struct timespec start, busy_end, t;
 	long busy, idle; /* ns */
 
-	if (u > 100)
+	if (u > 100) {
 		fprintf(stderr, "force %u to 100\n", u);
+		u = 100;
+	}
 
 	/* split 1s to 2 part, busy time, idle time */
 	busy = 1E7 * u;
