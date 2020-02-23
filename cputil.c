@@ -106,6 +106,11 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
+	if (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")) {
+		print_help();
+		return 0;
+	}
+
 	if (sscanf(argv[1], "%u", &util) != 1) {
 		print_help();
 		return -1;
