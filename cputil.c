@@ -29,6 +29,7 @@
 #include <pthread.h>
 #include <string.h>
 
+#define VERSION "1.0"
 unsigned int util;
 unsigned int thread_count;
 unsigned int run_time;
@@ -108,6 +109,11 @@ int main(int argc, char **argv)
 
 	if (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")) {
 		print_help();
+		return 0;
+	}
+
+	if (!strcmp(argv[1], "--version")) {
+		fprintf(stderr, "cputil - %s\n", VERSION);
 		return 0;
 	}
 
