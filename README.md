@@ -1,21 +1,28 @@
 # cputil
-Generate a workload cost specific cpu usage
 
-Usage hint:
+The **cputil** can generate a workload cost specific cpu usage.
 
-cputil util [time]
+## Usage
 
-Now there are two parameters, the first one used to specify a cpu utilization
-(75 stands for 75%, 800 stands for 800% if exist more than 8 cpus in your
-system). The second one is used to set the run time in seconds, this parameter
-is optional if not set (default) keep running until be killed.
+	cputil util [time]
 
-Example:
+	cputil -h / --help
+		show help
 
-1. run a 75% cpu.util for 30s
+	cputil --version
+		show version
 
-$ cputil 75 30
+Now there are two parameters:
 
-2. run a 800% cpu.util
+- The first one used to specify a cpu **utilization**
+(75 stands for 75%, 800 stands for 800% if there are enough cpus in your system).
 
-$ cputil 800
+- The second one is used to set the **run time** in unit of seconds, this parameter is optional if it was not specified(default), **cputil** will keep running until be killed.
+
+### Example
+
+	1. run a 75% cpu.util for 30s
+	$ cputil 75 30
+
+	2. run a 800% cpu.util
+	$ cputil 800
