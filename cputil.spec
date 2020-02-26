@@ -11,14 +11,12 @@ Source0:        https://github.com/dublio/cputil/releases/download/1.0/cputil-1.
 # disable producing debuginfo for this package
 %global debug_package %{nil}
 
-%global dirfull %{name}-%{version}
-
 %description
 This software can generate a workload that cost specific cpu usage.
 
 
 %prep
-%autosetup -n %{dirfull}
+%autosetup
 
 
 %build
@@ -26,16 +24,12 @@ make %{?_smp_flags}
 
 
 %install
-install -d %{buildroot}/%{_bindir}
-install %{_builddir}/%{dirfull}/cputil %{buildroot}/%{_bindir}
-
-install -d %{buildroot}/%{_mandir}/man1
-install -m 0644 %{_builddir}/%{dirfull}/cputil.1 %{buildroot}/%{_mandir}/man1
+rm -rf $RPM_BUILD_ROOT
+make prefix=$RPM_BUILD_ROOT mandir=$RPM_BUILD_ROOT/%{_mandir} bindir=$RPM_BUILD_ROOT/%{_bindir} install
 
 
 %files
 %{_bindir}/cputil
-# node that: man page will be compress as .gz file
 %{_mandir}/man1/cputil.1.gz
 
 

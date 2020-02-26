@@ -1,6 +1,6 @@
-PREFIX ?= /usr/local
-BIN_DIR=$(PREFIX)/bin
-MAN_DIR=$(PREFIX)/man
+prefix ?= /usr/local
+bindir ?= $(prefix)/bin
+mandir ?= $(prefix)/man
 
 cputil: cputil.o
 	gcc -o cputil cputil.o -lpthread
@@ -9,9 +9,11 @@ clean:
 	rm -f cputil.o cputil
 
 install:
-	install -D -s cputil $(BIN_DIR)/cputil
-	install -m 644 cputil.1 $(MAN_DIR)/man1
+	install -m 755 -d $(bindir)
+	install -m 755 cputil $(bindir)/cputil
+	install -m 755 -d $(mandir)/man1
+	install -m 644 cputil.1 $(mandir)/man1
 
 uninstall:
-	-rm $(BIN_DIR)/cputil
-	-rm $(MAN_DIR)/man1/cputil.1
+	-rm $(bindir)/cputil
+	-rm $(mandir)/man1/cputil.1
