@@ -3,7 +3,7 @@ bindir ?= $(prefix)/bin
 mandir ?= $(prefix)/man
 
 cputil: cputil.o
-	gcc -o cputil cputil.o -lpthread
+	gcc $(CFLAGS) -o cputil cputil.o -lpthread
 
 clean:
 	rm -f cputil.o cputil
