@@ -19,7 +19,7 @@ cp rpm.sh $DIR
 
 tar -zcvf $TAR $DIR
 
-rm -rf $DIR
+rm -rf $DIR/*
 
 TMP=`mktemp -d`
 RPMBUILD=$TMP/rpmbuild
@@ -29,7 +29,8 @@ mkdir -p $RPMBUILD/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 
 rpmbuild -ba -D "_topdir $RPMBUILD" cputil.spec
 
-\cp -fr $RPMBUILD/SRPMS/*.rpm .
-\cp -fr $RPMBUILD/RPMS/*/*.rpm .
+mv $TAR $DIR/
+\cp -fr $RPMBUILD/SRPMS/*.rpm $DIR/
+\cp -fr $RPMBUILD/RPMS/*/*.rpm $DIR/
 
 rm -rf $TMP
