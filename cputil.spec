@@ -27,10 +27,12 @@ make mandir=$RPM_BUILD_ROOT/%{_mandir} bindir=$RPM_BUILD_ROOT/%{_bindir} install
 
 
 %files
+%doc README.md
+%license LICENSE
 %{_bindir}/cputil
 %{_mandir}/man1/cputil.1*
 
 
 %changelog
-* Sun Feb 23 2020 Weiping Zhang <zwp10758@gmail.com>
-- Release v1.0.
+* Fri Mar 27 2020 Weiping Zhang <zwp10758@gmail.com> - 1.0-1
+- First release cputil-1.0-1
