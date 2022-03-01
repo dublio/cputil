@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Generate a workload cost specific cpu usage
 License:        GPLv3
 URL:            https://github.com/dublio/cputil
-Source0:        https://github.com/dublio/cputil/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/dublio/cputil/releases/download/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires: gcc make
 #Requires:
 
@@ -19,7 +19,7 @@ This software can generate a workload that cost specific cpu usage.
 
 %build
 %{set_build_flags}
-make %{?_smp_flags}
+%{make_build}
 
 
 %install

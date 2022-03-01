@@ -10,9 +10,9 @@ clean:
 
 install:
 	install -m 755 -d $(bindir)
-	install -m 755 cputil $(bindir)/cputil
+	install -pm 755 cputil $(bindir)/cputil
 	install -m 755 -d $(mandir)/man1
-	install -m 644 cputil.1 $(mandir)/man1
+	install -pm 644 cputil.1 $(mandir)/man1
 
 uninstall:
 	-rm $(bindir)/cputil
